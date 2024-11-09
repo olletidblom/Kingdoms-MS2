@@ -1,0 +1,76 @@
+/* Reset padding and margin for all elements */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Logo styling */
+.main-logo { 
+    margin-top: 20px; 
+}
+
+/* Centering utility class */
+.center { 
+    text-align: center; 
+}
+
+/* Container for the grid */
+.g-container { 
+    margin-top: 50px; /* Adjust margin for positioning */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+/* Grid board styling */
+.g-board {
+    display: grid;
+    grid-template-columns: repeat(6, 60px); /* 6 columns, each 60px wide */
+    grid-template-rows: repeat(5, 60px);    /* 5 rows, each 60px high */
+    gap: 5px; /* Spacing between grid items */
+    background-color: aquamarine;
+
+}
+
+/* Individual tile styling */
+.b-tiles{ 
+    border: 2px solid black;
+    width: 100%;  /* Takes full grid cell width */
+    height: 100%; /* Takes full grid cell height */
+    background-color: lightgray; /* Optional: Background color for tiles */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.c-container { 
+    margin-top: 50px; /* Adjust margin for positioning */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.c-board {
+    display: grid;
+    grid-template-columns: repeat(5, 50px); /* 6 columns, each 60px wide */
+    grid-template-rows: repeat(5, 50px);    /* 5 rows, each 60px high */
+    gap: 5px; /* Spacing between grid items */
+    background-color: aquamarine;
+
+}
+
+
+.c-tiles{ 
+    border: 2px solid black;
+    width: 100%;  /* Takes full grid cell width */
+    height: 100%; /* Takes full grid cell height */
+    background-color: lightgray; /* Optional: Background color for tiles */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
