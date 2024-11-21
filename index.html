@@ -4,84 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kingdoms
-    </title>
-    <link href="/assets/css/style.css" rel="stylesheet">
+    <title>Arcane Underground</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 <body>
     <header>
-        <h1 class="center main-logo">Kingdoms</h1>
+        <h1 class="centered">Arcane Underground</h1>
     </header>
 
     <main>
-        <div class="g-container">    
-            <h4>Game Board</h4>
-            <div class="g-board">
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
-                <div class="b-tiles"></div>
+
+        <section class="main-board">
+            <!-- Game Board -->
+            <div>
+
+                <div id="game-board" class="g-board"></div>
             </div>
-        </div>
-        <div class="c-container">
-            <h4>Cards</h4>
-            <div class="c-board">
-                <div class="c-tiles"></div>
-                <div class="c-tiles"></div>
-                <div class="c-tiles"></div>
-                <div class="c-tiles"></div>
-                <div class="c-tiles"></div>
-                <div class="c-tiles"></div>
-                <div class="c-tiles"></div>
-                <div class="c-tiles"></div>
-                <div class="c-tiles"></div>
-                <div class="c-tiles"></div>
-                <div class="c-tiles"></div>
-                <div class="c-tiles"></div>
-                <div class="c-tiles"></div>
-                <div class="c-tiles"></div>
-                <div class="c-tiles"></div>
-                <div class="c-tiles"></div>
-                <div class="c-tiles"></div>
-                <div class="c-tiles"></div>
-                <div class="c-tiles"></div>
-                <div class="c-tiles"></div>
-                <div class="c-tiles"></div>
-                <div class="c-tiles"></div>
-          
+            <!-- Cards -->
+            <div id="hidecards">
+                
+                <div id="overlay" class="overlay"></div>
+                <div id="card-board" class="cards"></div>
             </div>
-        </div>
+        </section>
+        <section class="bottom-panel">
+            <button id="pickcard">Pick Card</button>
+            <div id="selectedCard"></div>
+            <button id="calcscore">Calculate Score</button>
+        </section>
+
+
+
+
+
+
+
     </main>
 
-    <script src="/js/script.js"></script>
-
+    <script src="js/script.js"></script>
 </body>
 
 </html>
