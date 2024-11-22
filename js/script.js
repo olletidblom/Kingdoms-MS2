@@ -212,13 +212,12 @@ calculate.addEventListener("click", () => {
 
 
 
-// Render and initialize boards
+// Render and initialize boards 
 renderBoard();
 renderCards();
 shuffleCards();
 setupCardSelection();
 setupBoardPlacement();
-
 
 
 
