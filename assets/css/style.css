@@ -25,6 +25,7 @@ html, body {
 header{ 
   align-items: center;
   min-height:10em;
+  margin-bottom: 0px;
    
 }
 
@@ -148,6 +149,14 @@ header{
 
 }
 
+#playerTurn { 
+    color:red; 
+    text-align: center;
+    margin:0; 
+    padding:0; 
+    z-index: 4;
+}
+
 /* Mobile screens */
 @media (max-width: 600px) {
     #game-board {
@@ -241,3 +250,4 @@ header{
         font-size: 16px;
     }
 }
+

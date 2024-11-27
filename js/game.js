@@ -5,8 +5,7 @@ let hidecards = document.getElementById("hidecards");
 const overlay = document.getElementById("overlay");
 const cardBoard = document.getElementById("card-board");
 const gameBoard = document.getElementById("game-board");
-const cardsBoard = document.getElementById("card-board");
-const selected = document.getElementById("selectedCard");
+const selectedDOM = document.getElementById("selectedCard");
 let calculate = document.getElementById("calcscore");
 
 // Card Array
@@ -34,6 +33,7 @@ const cards = [
     { image: "url(/assets/images/tiles/mountain.png", name: "Mountain", value: null, effect: "mountain" },
     { image: "url(/assets/images/tiles/mountain.png", name: "Mountain", value: null, effect: "mountain" }
 ];
+
 
 // Game Board Setup
 const rows = 5;
@@ -77,7 +77,7 @@ function renderBoard() {
 
 // Render the cards in HTML
 function renderCards() {
-    cardsBoard.innerHTML = ""; // Clear any existing tiles
+    cardBoard.innerHTML = ""; // Clear any existing tiles
     for (let row = 0; row < c_rows; row++) {
         for (let col = 0; col < c_cols; col++) {
             const c_tile = document.createElement("div");
@@ -106,7 +106,7 @@ function shuffleCards() {
             }
         }
     }
-    console.log("Cards shuffled and placed on c_board", c_board);
+
     const cardTiles = document.querySelectorAll(".c-tiles");
     cardTiles.forEach((cardTile, index) => {
         const row = Math.floor(index / c_cols);
@@ -142,11 +142,11 @@ function setupCardSelection() {
                 cardTile.style.backgroundImage = `${selectedCard.image}`  // Show name and value/effect
 
                 hidecards.style.display = "none"
-                selected.style.backgroundImage = selectedCard.image;  // Show name and value/effect
-                selected.style.visibility = "visible"
-                console.log(`Selected card: ${selectedCard.name} with value ${selectedCard.value} url:${selectedCard.image}`);
+                selectedDOM.style.backgroundImage = selectedCard.image;  // Show name and value/effect
+                selectedDOM.style.visibility = "visible"
+               
             } else {
-                console.log("No card found at this location on card board");
+                
             }
         });
     });
@@ -165,8 +165,7 @@ function setupBoardPlacement() {
                 // Place the card on the board and update display
                 board[row][col] = { ...selectedCard }; // Copy selectedCard data into board
                 tile.style.backgroundImage = `${selectedCard.image}`
-                console.log(`Placed ${selectedCard.name} at (${row}, ${col}) on the game board`);
-                selected.style.visibility = "hidden";
+                selectedDOM.style.visibility = "hidden";
 
                 // Hide the corresponding card tile in card-board
                 const cardTile = document.querySelector(`.c-tiles[data-row="${selectedCard.row}"][data-col="${selectedCard.col}"]`);
@@ -184,7 +183,7 @@ function setupBoardPlacement() {
             } else {
                 console.log("No card selected to place");
             }
-            console.log(board)
+            
         });
     });
 }
