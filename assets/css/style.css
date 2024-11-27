@@ -75,6 +75,26 @@ header{
     
 }
 
+ #castle-board { 
+    display:grid; 
+    justify-content: center;
+    grid-template-columns: repeat(4, 120px);
+    grid-template-rows: repeat(1, 120px);
+    gap:10px; 
+
+    
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px; /* Increase padding for better spacing */
+    z-index: 100; /* Place above everything */
+    display: none; /* Hidden by default */
+    overflow: hidden; 
+
+
+ }
+
 .c-tiles, .b-tiles {
     width: 100%;
     height: 100%;
@@ -155,6 +175,35 @@ header{
     margin:0; 
     padding:0; 
     z-index: 4;
+}
+
+#start-menu {
+    text-align: center;
+    margin-top: 50px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#player-setup {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.player-count-btn {
+    margin: 10px;
 }
 
 /* Mobile screens */

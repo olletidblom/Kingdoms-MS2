@@ -10,41 +10,58 @@
 
 <body>
     <header>
-            <div class="logo"></div>
+        <div class="logo"></div>
     </header>
 
     <main>
+        <!-- Start Menu -->
+        <div id="start-menu">
+            <h1>Welcome to Arcane Underground</h1>
+            <button id="start-game-btn">Start Game</button>
+            <button id="how-to-play-btn">How to Play</button>
+        </div>
 
-    
-        <h2 id="playerTurn"></h2>
+        <!-- Player Setup -->
+        <div id="player-setup" style="display: none;">
+            <h2>Player Setup</h2>
+            <div id="player-count-selection">
+                <button class="player-count-btn" data-players="2">2 Players</button>
+                <button class="player-count-btn" data-players="3">3 Players</button>
+                <button class="player-count-btn" data-players="4">4 Players</button>
+            </div>
+            <div id="player-details" style="display: none;">
+                <form id="player-form"></form>
+                <button id="start-game-play-btn">Start Game</button>
+            </div>
+        </div>
 
-        <section class="main-board">
-            <!-- Game Board -->
-            <div>
 
+        <!-- Existing Game Screen -->
+        <div id="game-screen" style="display: none;">
+            <h2 id="playerTurn"></h2>
+            <section class="main-board">
                 <div id="game-board"></div>
-            </div>
-            <!-- Cards -->
-            <div id="hidecards">
-                
-                <div id="overlay" class="overlay"></div>
-                <div id="card-board"></div>
-            </div>
-        </section>
-        <section class="bottom-panel">
-            <button id="pickcard">Pick Card</button>
-            <div id="selectedCard"></div>
-            <button id="calcscore">Calculate Score</button>
-        </section>
-        
+                <div id="hidecards">
+                    <div id="overlay" class="overlay"></div>
+                    <div id="card-board"></div>
+                    <div id="castle-board"></div>
+                </div>
+            </section>
+            <section class="bottom-panel">
+                <button id="pickcard">Pick Card</button>
+                <div id="selectedCard"></div>
+                <button id="placeCastle">Place Castle</button>
+            </section>
+        </div>
+
 
 
     </main>
 
- 
+
     <script type="module" src="js/main.js"></script>
-    
-    
+
+
 
 </body>
 
