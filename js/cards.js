@@ -50,3 +50,20 @@ export function shuffleCards(cards, c_rows, c_cols, c_board){
     });
     console.log("Cards Shuffled")
 }
+
+
+
+
+
+export function placedDragon(){ 
+    
+}; 
+
+export function placedMountain(){
+
+}; 
+
+export function palcedGoldmine(){
+}
+
+

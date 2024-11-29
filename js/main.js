@@ -1,7 +1,7 @@
 import { pickCard, hide_c_board, overlay, cardBoard, gameBoard, selectedDOM, placeCastle, castleBoard } from "./domElements.js";
 import { cards, shuffleCards } from "./cards.js";
 import { initializeBoard, renderBoard, renderCards } from "./initGame.js";
-import { show_Card, select_Card, place_Card, select_Castle } from "./gameLogic.js";
+import { show_Card, select_Card, place_Card, select_Castle, calculateScores } from "./gameLogic.js";
 import { setupStartScreen } from "./startscreen.js";
 
 function startGame(players) {
@@ -38,11 +38,12 @@ function startGame(players) {
 
     // Attach event listener for "Place Castle" button
     placeCastle.addEventListener("click", () => {
-        select_Castle(gameState, castleBoard, overlay, hide_c_board, selectedDOM);
+        select_Castle(gameState, castleBoard, overlay, hide_c_board, selectedDOM, cardBoard);
     });
 
-    select_Card(gameState, c_board, selectedDOM, hide_c_board); // Handle card selection
+    select_Card(gameState, c_board, selectedDOM, hide_c_board, cardBoard); // Handle card selection
     place_Card(gameState, board, selectedDOM); // Handle placement on the board
+    calculateScores(gameState);
 
     // Display the first player's turn
     document.getElementById("playerTurn").innerText = `${players[0].name}'s Turn`;
@@ -51,21 +52,29 @@ function startGame(players) {
     startGameLoop(gameState);
 }
 
+// Modify game loop
 function startGameLoop(gameState) {
-    const { board, players } = gameState;
-
-    // Check if the game board is filled
-    const isBoardFilled = () => board.every(row => row.every(cell => cell !== null));
+    const interval = setInterval(() => {
+        if (checkBoardFilled(gameState.board)) {
+            clearInterval(interval);
+            endGame(gameState);
+        }
+    }, 1000);
 }
 
-// Handle end-game logic
-function endGame(gameState) {
-    const { players } = gameState;
+function checkBoardFilled(board) {
+    return board.every(row => row.every(cell => cell !== null));
+}
 
-    // Calculate the winner based on scores
-    const winner = players.reduce((prev, curr) => (prev.score > curr.score ? prev : curr));
+function endGame(gameState) {
+    calculateScores(gameState);
+
+    const { players } = gameState;
+    const winner = players.reduce((max, player) => (player.score > max.score ? player : max), players[0]);
+
     alert(`Game Over! The winner is ${winner.name} with ${winner.score} points.`);
 }
 
 // Set up the start screen
 setupStartScreen(startGame);
+
